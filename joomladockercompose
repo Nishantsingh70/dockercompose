@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+    joomladbos:
+           image: mysql:5.6          
+           restart: always     
+           environment:
+                   MYSQL_ROOT_PASSWORD: rootpass
+                   MYSQL_USER: nishant
+                   MYSQL_PASSWORD: redhat
+                   MYSQL_DATABASE: mydb     
+           volumes:
+                   - mysql_storage_new:/var/lib/mysql   
+    joomlaos:
+           image: joomla
+           restart: always
+           depends_on: 
+               - joomladbos
+           links:
+               - joomladbos:mysql      
+           ports:
+               - 8080:80    
+           environment:
+                   JOOMLA_DB_HOST: joomladbos
+                   JOOMLA_DB_USER: nishant
+                   JOOMLA_DB_PASSWORD: redhat
+                   JOOMLA_DB_NAME: mydb    
+           volumes:
+                   - joomla_storage_new:/var/www/html
+volumes:
+    joomla_storage_new:
+    mysql_storage_new:        
+                  
