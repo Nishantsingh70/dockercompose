@@ -1,3 +1,3 @@
 # dockercompose
 
-In this project I use mysql and joomla iamges and made our down Joomla workspace
+In this project I use mysql and joomla images and made our down Joomla website for writing the blocks
