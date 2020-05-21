@@ -6,8 +6,8 @@ services:
            restart: always     
            environment:
                    MYSQL_ROOT_PASSWORD: rootpass
-                   MYSQL_USER: nishant
-                   MYSQL_PASSWORD: redhat
+                   MYSQL_USER: 123
+                   MYSQL_PASSWORD: 56677
                    MYSQL_DATABASE: mydb     
            volumes:
                    - mysql_storage_new:/var/lib/mysql   
@@ -22,8 +22,8 @@ services:
                - 8080:80    
            environment:
                    JOOMLA_DB_HOST: joomladbos
-                   JOOMLA_DB_USER: nishant
-                   JOOMLA_DB_PASSWORD: redhat
+                   JOOMLA_DB_USER: 123
+                   JOOMLA_DB_PASSWORD: 56677
                    JOOMLA_DB_NAME: mydb    
            volumes:
                    - joomla_storage_new:/var/www/html
