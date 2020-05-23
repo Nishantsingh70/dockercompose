@@ -11,39 +11,41 @@ Using Compose is basically a three-step process:
 3)Run docker-compose up and Compose starts and runs your entire app.
 
 This is my Dockerfile which contain all the isolated environment for mysql:5.6 and Joomla.
+      
+     
+    version: '3'
+    services:
+        joomladbos:
+               image: mysql:5.6          
+               restart: always     
+               environment:
+                       MYSQL_ROOT_PASSWORD: rootpass
+                       MYSQL_USER: 123
+                       MYSQL_PASSWORD: 56677
+                       MYSQL_DATABASE: mydb     
+               volumes:
+                       - mysql_storage_new:/var/lib/mysql   
+        joomlaos:
+               image: joomla
+               restart: always
+               depends_on: 
+                   - joomladbos
+               links:
+                   - joomladbos:mysql      
+               ports:
+                   - 8080:80    
+               environment:
+                       JOOMLA_DB_HOST: joomladbos
+                       JOOMLA_DB_USER: 123
+                       JOOMLA_DB_PASSWORD: 56677
+                       JOOMLA_DB_NAME: mydb    
+               volumes:
+                       - joomla_storage_new:/var/www/html
+    volumes:
+        joomla_storage_new:
+        mysql_storage_new:
 
-version: '3'
-
-services:
-    joomladbos:
-           image: mysql:5.6          
-           restart: always     
-           environment:
-                   MYSQL_ROOT_PASSWORD: rootpass
-                   MYSQL_USER: 123
-                   MYSQL_PASSWORD: 56677
-                   MYSQL_DATABASE: mydb     
-           volumes:
-                   - mysql_storage_new:/var/lib/mysql   
-    joomlaos:
-           image: joomla
-           restart: always
-           depends_on: 
-               - joomladbos
-           links:
-               - joomladbos:mysql      
-           ports:
-               - 8080:80    
-           environment:
-                   JOOMLA_DB_HOST: joomladbos
-                   JOOMLA_DB_USER: 123
-                   JOOMLA_DB_PASSWORD: 56677
-                   JOOMLA_DB_NAME: mydb    
-           volumes:
-                   - joomla_storage_new:/var/www/html
-volumes:
-    joomla_storage_new:
-    mysql_storage_new:        
+         
                   
 By launching the complete setup of Joomla and mysql:5.6  type the command:
     
