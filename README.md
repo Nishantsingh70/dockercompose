@@ -63,7 +63,7 @@ Now for connecting to Joomla:
     
      docker inspect docker_compose_joomladbos_1 | grep IPAddress
      
- * Now check the mysql connectivity.
+ * Now check the mysql connectivity
      
      mysql -h mysql_host_ip -u nishant -predhat123456
  
