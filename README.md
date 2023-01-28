@@ -49,7 +49,7 @@ This is my Dockerfile which contain all the isolated environment for mysql:5.6 a
                   
 By launching the complete setup of Joomla and mysql:5.6  type the command:
     
-    docker-compose up
+    docker-compose -f docker_compose.yml up -d
      
 This command do the following task:
 
