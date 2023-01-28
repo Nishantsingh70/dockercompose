@@ -1,0 +1,495 @@
+   1  yum install docker -y
+    2  cd /etc/yum.repos.d/
+    3  ls
+    4  cat amzn2-core.repo 
+    5  cd
+    6  rpm -qa docker
+    7  docker pull httpd
+    8  systemctl status docker
+    9  systemctl enable --now docker
+   10  systemctl status docker
+   11  docker pull httpd
+   12  docker pull centos
+   13  docker pull python
+   14  docker pull wordpress
+   15  docker pull mysql
+   16  docker images
+   17  df -h
+   18  df -hT
+   19  docker run -dit --name os1 python
+   20  docker ps
+   21  docker exec -it os1 bash
+   22  docker ps
+   23  docker attach os1
+   24  docker ps
+   25  docker ps -a
+   26  docker start os1
+   27  docker exec -it os1 bash
+   28  docker ps
+   29  docker run -dit --name os2 python
+   30  docker run -dit --name os3 python
+   31  docker ps
+   32  docker rm -f (docker ps)
+   33  docker rm -f $(docker ps)
+   34  docker ps
+   35  docker run -dit --name os3 python
+   36  docker run -dit --name os2 python
+   37  docker run -dit --name os1 python
+   38  docker ps
+   39  docker rm -f ($docker ps)
+   40  echo $(docker ps)
+   41  docker ps
+   42  docker ps help
+   43  docker ps --help
+   44  docker ps -a
+   45  docker ps -f Names
+   46  docker ps -n
+   47  docker ps -l
+   48  docker ps -s
+   49  echo `$(docker ps)
+   50  ;
+   51  `
+   52  docker rm -f ($docker ps)
+   53  docker rm -f $(docker ps -a)
+   54  docker run -dit --name os1 python
+   55  docker ps
+   56  docker inspect os1
+   57  [nslookup
+   58  nslookup
+   59  yum whatprovides nslookup
+   60  nslookup
+   61  docker info
+   62  docker container ps
+   63  podman ps
+   64  yum install podman -y
+   65  docker container ls -a
+   66  docker container ls
+   67  docker images
+   68  docker container help
+   69  docker images help
+   70  docker images --help
+   71  docker images -a
+   72  docker images -q
+   73  docker container ps
+   74  docker container ps -q
+   75  docker container ps -aq
+   76  echo $(date)
+   77  docker exec -it os1 bash
+   78  docker run -it --name os2 centos date
+   79  docker container ps -q
+   80  docker container ps -a
+   81  docker rm -f os2
+   82  docker container ps -aq
+   83  history
+   84  yum whatprovides ifconfig
+   85  yum whatprovides wget
+   86  docker exec -it os1 bash
+   87  docker ps
+   88  docker rm -f os1
+   89  docker container run -dit --name os1 centos
+   90  docker exec -it os1 bash
+   91  docker ps
+   92  docker commit os1 myimage:v1 
+   93  docker images
+   94  docker ps
+   95  docker run -dit --name os2 myimage:v1 
+   96  docker ps
+   97  docker exec -it os2 bash
+   98  docker ps
+   99  docker ps -q
+  100  docker ps -a
+  101  docker ps -f
+  102  docker ps --help
+  103  docker ps -n
+  104  docker ps -q
+  105  docker ps -s
+  106  history
+  107  ls
+  108  history > command.txt
+  109  ls
+  110  cat command.txt 
+  111  ls
+  112  pwd
+  113  cat command.txt 
+  114  history
+  115  docker ps
+  116  docker ps -q
+  117  df -hT
+  118  free -m
+  119  docker info
+  120  docker inspect os1 
+  121  docker inspect os2
+  122  watch -n 1 date
+  123  watch -n 1 fre -m
+  124  watch -n 1 free -m
+  125  lscpu
+  126  docker inspect os1
+  127  docker inspect os1 --help
+  128  docker inspect os1 --format "{{.NetworkingSettings.IPAddress}}" 
+  129  docker inspect os1
+  130  docker inspect os1 --format "{{.NetworkSettings.IPAddress}}" 
+  131  docker inspect os1 --format "{{.NetworkSettings.Networks.bridge.IPAddress}}" 
+  132  which httpd
+  133  yum install httpd -y
+  134  systemctl status httpd
+  135  systemctl enable --now httpd
+  136  systemctl status httpd
+  137  cd /var/www/html/
+  138  ls
+  139  cat >> index.html
+  140  cat index.html 
+  141  which httpd
+  142  /usr/sbin/httpd
+  143  systemctl stop httpd
+  144  systemctl status httpd
+  145  /usr/sbin/httpd
+  146  systemctl status httpd
+  147  /usr/sbin/httpd
+  148  systemctl status httpd
+  149  /usr/sbin/httpd
+  150  ps -aux | grep httpd
+  151  ps -aux | grep httpd -fq
+  152  ps -aux | grep httpd -q
+  153  pid $(ps -aux) 
+  154  echo $(ps -aux) 
+  155  ps -aux | grep httpd -q
+  156  ps -aux | grep httpd 
+  157  ps -aux --help
+  158  ps --help
+  159  ps(1)
+  160  curl 13.233.145.9
+  161  netstat -tnlp
+  162  systemctl status httpd
+  163  kill all httpd
+  164  killall httpd
+  165  netstat -tnlp
+  166  curl 13.233.145.9
+  167  pwd
+  168  cd
+  169  pwd
+  170  ls -a 
+  171  cat .bashrc 
+  172  cd /var/run/
+  173  ls
+  174  cd httpd
+  175  ls
+  176  ps -aux | grep httpd 
+  177  which httpd
+  178  /usr/sbin/httpd
+  179  ps -aux | grep httpd 
+  180  ls
+  181  cat httpd.pid 
+  182  docker ps
+  183  docker container exec -it os2 bash
+  184  docker images
+  185  pwd
+  186  cd
+  187  docker images
+  188  docker save myimage:v1 web.tar
+  189  docker save myimage:v1 -o web.tar
+  190  docker images
+  191  ls
+  192  scp web.tar root@15.207.109.168:/root
+  193  ping 15.207.109.168
+  194  scp web.tar root@15.207.109.168:/root
+  195  scp web.tar root@15.207.109.168:/root/myimage
+  196  docker inspect os1 | grep IPAddress
+  197  docker inspect os1 -f {{NetworkSettings.IPAdress}}
+  198  docker inspect os1 -f {{.NetworkSettings.IPAdress}}
+  199  docker inspect os1 -f {{.NetworkSettings.IPAddress}}
+  200  scp web.tar root@15.207.109.168:/root/image
+  201  find / -name ssh
+  202  find /etc -name ssh
+  203  cd /etc/ssh
+  204  ls
+  205  cd /dev
+  206  ls
+  207  cd sr0
+  208  ls | grep s
+  209  ls | grep sr
+  210  ls | grep sd
+  211  cd sda
+  212  cat sda
+  213    
+  214  history
+  215  docker ps
+  216  cd /run/media/root
+  217  ls
+  218  docker images
+  219  docker pull wordpress:5.1.1-php7.3-apache 
+  220  docker pull mysql:5.7
+  221  docker images
+  222  df -hT
+  223  docker rmi wordpress:latest
+  224  docker rmi mysql:latest
+  225  docker images
+  226  df -hT
+  227  x=5
+  228  exho $x
+  229  echo $x
+  230  docker ps
+  231  docker container run -it --name os3 -e Z=$x centos
+  232  docker container start os3
+  233  docker ps
+  234  docker rm -f os1
+  235  docker ps
+  236  cd /etc/yum.repos.d/
+  237  ls
+  238  vim docker.repo
+  239  yum repolist
+  240  yum docker install docker-ce -y
+  241  yum install docker-ce -y
+  242  yum install docker-ce --nobest -y
+  243  docker ps
+  244  docker container run -dit  --name os1 -e MYSQL_ROOT_PASSWORD=redhat123 mysql:5.7
+  245  docker ps
+  246  docker inspect os1 -f {{.NetworkSettings.IPAddress}}
+  247  docker inspect os2 -f {{.NetworkSettings.IPAddress}}
+  248  docker inspect os3 -f {{.NetworkSettings.IPAddress}}
+  249  docker inspect os4 -f {{.NetworkSettings.IPAddress}}
+  250  docker exec  -it os1 bash
+  251  docker ps
+  252  yum install mysql -y
+  253  docker inspect os1 -f {{.NetworkSettings.IPAddress}}
+  254  mysql -h
+  255  mysql --h
+  256  mysql help
+  257  mysql -h 17
+  258  docker inspect os1 -f {{.NetworkSettings.IPAddress}}
+  259  mysql -h 172.17.0.2 -u root -p redhat123
+  260  mysql -h 172.17.0.2 -u root -predhat123
+  261  docker ps
+  262  docker history mysql:5.7
+  263  docker volume ls
+  264  docker volume --help
+  265  docker volume create --help
+  266  docker help
+  267  docker top
+  268  docker top --help
+  269  docker top os1
+  270  docker rename 
+  271  docker rename os1 mysqlcon
+  272  docker top os1
+  273  docker ps
+  274  docker rm -f $(docker ps -aq)
+  275  docker ps
+  276  docker ps -a
+  277  docker run --name os1 centos
+  278  docker run --name os2 centos
+  279  docker stop os2
+  280  docker ps -a
+  281  docker ps 
+  282  docker rm -f $(docker ps -aq)
+  283  docker run --name os2 centos:latest
+  284  docker ps 
+  285  docker rm -f $(docker ps -aq)
+  286  docker run -dit --name os2 centos:latest
+  287  docker ps 
+  288  docker run --dit --name os1 centos:latest
+  289  docker run -dit --name os1 centos:latest
+  290  docker ps
+  291  docker stop os1
+  292  docker ps
+  293  docker ps -a
+  294  docker ps -q
+  295  docker rm -f $(docker ps -aq)
+  296  docker ps
+  297  docker volume ls
+  298  docker volumne create --help
+  299  docker volumne create mysql_storage
+  300  docker volume create mysql_storage
+  301  docker volume ls
+  302  docker volume create wordpress_storage
+  303  docker volume ls
+  304  docker run -dit -e MYSQL_ROOT_PASSWORD=redhat123 -e MYSQL_USER=nishant -e MYSQL_PASSWORD=redhat1234 -e MYSQL_DATABASE=redhat -v mysql_storage:/var/lib/mysql mysql:5.7
+  305  docker ps
+  306  docker rm -f $(docker ps -aq)
+  307  docker run -dit --name mysqldb -e MYSQL_ROOT_PASSWORD=redhat123 -e MYSQL_USER=nishant -e MYSQL_PASSWORD=redhat1234 -e MYSQL_DATABASE=redhat -v mysql_storage:/var/lib/mysql mysql:5.7
+  308  docker ps
+  309  docker run -dit -e WORD_PRESS_DB_HOST=mysqldb  -e WORDPRESS_DB_USER=nishant -e WORDPRESS_DB_PASSWORD=redhat1234 -e WORDPRESS_DB_NAME=redhat -v wordpress_storage:/var/www/html --name wordpressapp -p 8080:80 --link mysqldb wordpress:5.1.1-php7.3-apache
+  310  docker ps
+  311  netstat -tnlp
+  312  ifconfig enp0s3
+  313  ifconfig enp0s8
+  314  ifconfig eth0
+  315  docker rm -f wordpressapp
+  316  docker ps
+  317  docker rm -f mysqldb
+  318  docker ps
+  319  history
+  320  docker run -dit --name mysqldb -e MYSQL_ROOT_PASSWORD=redhat123 -e MYSQL_USER=nishant -e MYSQL_PASSWORD=redhat1234 -e MYSQL_DATABASE=redhat -v mysql_storage:/var/lib/mysql mysql:5.7
+  321  docker ps
+  322  docker inspect mysqldb -f {{.NetworkSettings.IPAddress}}
+  323  mysql -h 172.17.0.2 -u root -p
+  324  mysql -h 172.17.0.2 -u root -predhat1234
+  325  mysql -h 172.17.0.2 -u nishant  -predhat1234
+  326  docker ps
+  327  history
+  328  docker run -dit -e WORDPRESS_DB_HOST=mysqldb  -e WORDPRESS_DB_USER=nishant -e WORDPRESS_DB_PASSWORD=redhat1234 -e WORDPRESS_DB_NAME=redhat -v wordpress_storage:/var/www/html --name wordpressapp -p 8080:80 --link mysqldb wordpress:5.1.1-php7.3-apache
+  329  docker ps
+  330  docker log wordpress
+  331  docker log wordpressapp
+  332  docker --help
+  333  docker logs wordpressapp
+  334  cd
+  335  cls
+  336  clear
+  337  docker ps
+  338  docker exec wordpressapp date
+  339  docker exec wordpressapcal
+  340  docker exec wordpressap cal
+  341  docker exec wordpressapp cal
+  342  docker exec wordpressapp date
+  343  echo $SHELL
+  344  route -n
+  345  cat /etc/sysctl.conf 
+  346  ifconfig 
+  347  ifconfig eth0
+  348  route -n
+  349  find / -name net
+  350  find / -name net-scripts
+  351  find / -name net_script
+  352  find / -name net-script
+  353  cd /etc
+  354  ls | grep sy
+  355  ls | grep s
+  356  ls | grep s%
+  357  ls | grep s
+  358  cd sysctl.d
+  359  ls
+  360  cd ..
+  361  cd hostname
+  362  cat hostname
+  363  cat hosts
+  364  hostname set-hostname nishant
+  365  hostnamectl set-hostname nishant
+  366  cat hostname
+  367  exec bash
+  368  docker network
+  369  docker network inspect
+  370  docker network ls
+  371  docker logs mysqldb
+  372  docker rm -f mysqldb
+  373  docker run -dit --name mysqldb -e MYSQL_ROOT_PASSWORD=redhat123 -e MYSQL_USER=nishant -e MYSQL_PASSWORD=redhat1234 -e MYSQL_DATABASE=redhat -v mysql_storage:/var/lib/mysql mysql:5.7
+  374  docker ps
+  375  docker rm -f wordpressapp
+  376  history
+  377  docker run -dit -e WORDPRESS_DB_HOST=mysqldb  -e WORDPRESS_DB_USER=nishant -e WORDPRESS_DB_PASSWORD=redhat1234 -e WORDPRESS_DB_NAME=redhat -v wordpress_storage:/var/www/html --name wordpressapp -p 8080:80 --link mysqldb wordpress:5.1.1-php7.3-apache
+  378  docker rm -f wordpressapp
+  379  docker ps
+  380  docker run -dit -e WORDPRESS_DB_HOST=mysqldb  -e WORDPRESS_DB_USER=nishant -e WORDPRESS_DB_PASSWORD=redhat1234 -e WORDPRESS_DB_NAME=redhat -v wordpress_storage:/var/www/html --name wordpressapp -p 8080:80 --link mysqldb wordpress:5.1.1-php7.3-apache
+  381  docker ps
+  382  cd
+  383  docker exec -it mysqldb bash
+  384  docker ps
+  385  docker --help
+  386  docker trust
+  387  docker trust sign 
+  388  docker images
+  389  docker trust sign myimage:v1
+  390  docker network ls
+  391  docker network 
+  392  docker network inspect
+  393  docker network inspect bridge
+  394  docker network inspect host
+  395  docker network ls
+  396  docker network inspect
+  397  docker network inspect host
+  398  cat /etc/resolv.conf 
+  399  docker-compose
+  400  sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
+  401  sudo chmod +x /usr/local/bin/docker-compose
+  402  docker-compose 
+  403  ls
+  404  history >> command.txt 
+  405  history
+  406  cat command.txt 
+  407  ls
+  408  mkdir docker_compose
+  409  ls
+  410  cd docker_compose/
+  411  ls
+  412  cd ..
+  413  cd
+  414  ls
+  415  mkdir image
+  416  ls
+  417  cd image/
+  418  ls
+  419  vim Dockerfile
+  420  cat Dockerfile 
+  421  docker images
+  422  docker build -t mypythonimage:v1 .
+  423  docker ps
+  424  docker ps -a
+  425  docker rm -f dca6e6fbafd8
+  426  docker ps -a
+  427  docker container run -it --name os1 centos:latest
+  428  sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
+  429  sudo chmod +x /usr/local/bin/docker-compose
+  430  ls
+  431  cd ..
+  432  ls
+  433  cd docker_compose/
+  434  ls
+  435  docker_compose.yml
+  436  vim docker_compose.yml
+  437  ccat docker_compose.yml 
+  438  cat docker_compose.yml 
+  439  docker-compose up
+  440  docker-compose -f docker_compose.yml up
+  441  docker rm -f $(docker ps -aq)
+  442  docker-compose -f docker_compose.yml up -d
+  443  docker ps
+  444  cat docker_compose.yml 
+  445  docker-compose down
+  446  docker-compose -f docker_compose.yml down -d
+  447  docker-compose -f docker_compose.yml --remove -d
+  448  docker ps
+  449  docker rm -f $(docker ps -aq)
+  450  docker ps
+  451  docker ps -a
+  452  vim docker_compose.yml 
+  453  docker-compose -f docker_compose.yml up -d
+  454  docker ps
+  455  curl 172.31.1.147:8080
+  456  docker attach docker_compose_joomlaos_1
+  457  docker rm -f $(docker ps -aq)
+  458  vim docker_compose.yml 
+  459  cat docker_compose.yml 
+  460  docker volume ls
+  461  docker volume 
+  462  docker volume rm docker_compose_joomla_storage_new
+  463  docker volume rm mysql_storage
+  464  docker volume 
+  465  docker volume rm 
+  466  docker volume rm wordpress_storage
+  467  docker volume rm docker_compose_mysql_storage_new
+  468  docker volume ls
+  469  docker-compose -f docker_compose.yml up -d
+  470  docker volume ls
+  471  docker rm -f $(docker ps -aq)
+  472  cat docker_compose.yml 
+  473  docker volume ls
+  474  vim docker_compose.yml 
+  475  docker-compose -f docker_compose.yml up -d
+  476  docker rm -f $(docker ps -aq)
+  477  vim docker_compose.yml 
+  478  docker-compose -f docker_compose.yml up -d
+  479  docker ps
+  480  docker ps -a
+  481  docker ps -q
+  482  docker ps
+  483  curl 172.31.1.147:8080
+  484  cat docker_compose.yml 
+  485  mysql -h joomladbos -u nishant -predhat123456
+  486  docker inspect joomlaos -f {{.NetworkSettings.IPAddress}}
+  487  docker inspect joomladbos -f {{.NetworkSettings.IPAddress}}
+  488  docker ps
+  489  docker inspect docker_compose_joomladbos_1 -f {{.NetworkSettings.IPAddress}}
+  490  docker inspect docker_compose_joomladbos_1 
+  491  docker inspect docker_compose_joomladbos_1 -f {{.NetworkSettings.IPAddress}}
+  492  docker inspect docker_compose_joomladbos_1 | grep IPAddress
+  493  mysql -h 172.18.0.2 -u nishant -predhat123456
+  494  docker ps
+  495  cat docker_compose.yml

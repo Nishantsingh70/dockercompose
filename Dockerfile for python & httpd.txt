@@ -1,0 +1,30 @@
+Dockerfile for python:
+
+Option1 =>
+
+FROM centos:latest
+RUN cd /etc/yum.repos.d/
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+RUN yum install java  -y
+RUN yum install python39 -y
+CMD /bin/bash
+
+option2 =>
+
+FROM centos:7
+RUN yum install java  -y
+RUN yum install python3 -y
+CMD /bin/bash
+
+===============================================
+
+Dockerfile for web server:
+
+FROM centos:7
+
+RUN yum install httpd -y
+COPY index.html /var/www/html
+EXPOSE 80
+CMD ["/usr/sbin/httpd","-DFOREGROUND"]
+
