@@ -57,3 +57,14 @@ This command do the following task:
 * Launching the containers(One container launch by the mysql image and second container launch by the Joomla image)
 * After this they mounting the storage.
 * They do patting also for accessing the Joomla from outside world.
+
+Now for connecting to Joomla:
+* First check the host ip of mysql database.
+    
+     docker inspect docker_compose_joomladbos_1 | grep IPAddress
+     
+ * Now check the mysql connectivity.
+     
+     mysql -h mysql_host_ip -u nishant -predhat123456
+ 
+
